@@ -1,0 +1,13 @@
+C:\Users\Leo\source\repos\TrabalhoCompiladores\TrabalhoCompiladores\bin\Debug\netcoreapp3.1\TrabalhoCompiladores.exe
+C:\Users\Leo\source\repos\TrabalhoCompiladores\TrabalhoCompiladores\bin\Debug\netcoreapp3.1\TrabalhoCompiladores.deps.json
+C:\Users\Leo\source\repos\TrabalhoCompiladores\TrabalhoCompiladores\bin\Debug\netcoreapp3.1\TrabalhoCompiladores.runtimeconfig.json
+C:\Users\Leo\source\repos\TrabalhoCompiladores\TrabalhoCompiladores\bin\Debug\netcoreapp3.1\TrabalhoCompiladores.runtimeconfig.dev.json
+C:\Users\Leo\source\repos\TrabalhoCompiladores\TrabalhoCompiladores\bin\Debug\netcoreapp3.1\TrabalhoCompiladores.dll
+C:\Users\Leo\source\repos\TrabalhoCompiladores\TrabalhoCompiladores\bin\Debug\netcoreapp3.1\TrabalhoCompiladores.pdb
+C:\Users\Leo\source\repos\TrabalhoCompiladores\TrabalhoCompiladores\obj\Debug\netcoreapp3.1\TrabalhoCompiladores.csprojAssemblyReference.cache
+C:\Users\Leo\source\repos\TrabalhoCompiladores\TrabalhoCompiladores\obj\Debug\netcoreapp3.1\TrabalhoCompiladores.AssemblyInfoInputs.cache
+C:\Users\Leo\source\repos\TrabalhoCompiladores\TrabalhoCompiladores\obj\Debug\netcoreapp3.1\TrabalhoCompiladores.AssemblyInfo.cs
+C:\Users\Leo\source\repos\TrabalhoCompiladores\TrabalhoCompiladores\obj\Debug\netcoreapp3.1\TrabalhoCompiladores.csproj.CoreCompileInputs.cache
+C:\Users\Leo\source\repos\TrabalhoCompiladores\TrabalhoCompiladores\obj\Debug\netcoreapp3.1\TrabalhoCompiladores.dll
+C:\Users\Leo\source\repos\TrabalhoCompiladores\TrabalhoCompiladores\obj\Debug\netcoreapp3.1\TrabalhoCompiladores.pdb
+C:\Users\Leo\source\repos\TrabalhoCompiladores\TrabalhoCompiladores\obj\Debug\netcoreapp3.1\TrabalhoCompiladores.genruntimeconfig.cache
