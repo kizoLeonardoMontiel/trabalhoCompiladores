@@ -6,12 +6,7 @@ namespace TrabalhoCompiladores
 {
     class Program
     {
-        void VerificaToken(String linha)
-        {
-            if(Regex.IsMatch(linha[0], @"^[a-zA-Z]+$")){
-                Console.WriteLine("sucesso");
-            }
-        }
+
 
         static void Main(string[] args)
         {
@@ -32,6 +27,13 @@ namespace TrabalhoCompiladores
                 Console.WriteLine("Arquivo não existe. Saindo...");
             }
 
+        }
+        static void VerificaToken(String linha)
+        {
+            if (Regex.IsMatch(linha, @"^[a-zA-Z]+$"))
+            {
+                Console.WriteLine("sucesso");
+            }
         }
     }
 }
