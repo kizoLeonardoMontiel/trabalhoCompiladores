@@ -16,7 +16,7 @@ namespace TrabalhoCompiladores
 
                 foreach (string linha in linhas)
                 {
-                    // Rodar método de verificação de sintaxe aqui
+                    // chamar uma função aqui
                 }
             }
             else
