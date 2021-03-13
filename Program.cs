@@ -12,7 +12,7 @@ namespace TrabalhoCompiladores
         static void Main(string[] args)
         {
             int numeroLinha = 0;
-            int countSimbolos = 0;
+            int countSimbolos = 1;
             List<String> tabelaDeToken = new List<String>();
             List<String> tabelaDeSimbolos = new List<String>();
             List<String> erros = new List<String>();
@@ -94,6 +94,10 @@ namespace TrabalhoCompiladores
                 foreach (char c in linha)
                 {
                     if (!Regex.IsMatch(c.ToString(), @"^[a-zA-Z0-9]+$"))
+                    {
+                        return false;
+                    }
+                    if (Char.IsWhiteSpace(c))
                     {
                         break;
                     }
