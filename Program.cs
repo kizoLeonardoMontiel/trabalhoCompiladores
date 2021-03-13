@@ -12,14 +12,15 @@ namespace TrabalhoCompiladores
         {
             Console.WriteLine("Digite o caminho do arquivo");
             string caminho = Console.ReadLine();
-            
+            int numeroLinha = 0;
             if (File.Exists(caminho))
             {
                 string[] linhas = System.IO.File.ReadAllLines(@caminho);
 
                 foreach (string linha in linhas)
                 {
-                    VerificaToken(linha);
+                    numeroLinha++;
+                    VerificaToken(linha, numeroLinha);
                 }
             }
             else
@@ -28,12 +29,25 @@ namespace TrabalhoCompiladores
             }
 
         }
-        static void VerificaToken(String linha)
+        static void VerificaToken(String linha, int numeroLinha)
         {
-            if (Regex.IsMatch(linha, @"^[a-zA-Z]+$"))
+            //Verificar se primeiro caracter eh uma letra:
+            if (Regex.IsMatch(linha[0].ToString(), @"^[a-zA-Z]+$"))
             {
-                Console.WriteLine("sucesso");
+                foreach (char c in linha)
+                {
+                    if (!Regex.IsMatch(c.ToString(), @"^[a-zA-Z0-9]+$"))
+                    {
+                        break;
+                    }
+                }
+                Console.WriteLine(numeroLinha + " Sucesso");
             }
+            else
+            {
+                Console.WriteLine(numeroLinha + " Erro");
+            }
+
         }
     }
 }
