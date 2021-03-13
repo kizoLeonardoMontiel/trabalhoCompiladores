@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace TrabalhoCompiladores
 {
@@ -6,8 +7,23 @@ namespace TrabalhoCompiladores
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World");
-            Console.WriteLine("testando xD");
+            Console.WriteLine("Digite o caminho do arquivo");
+            string caminho = Console.ReadLine();
+            
+            if (File.Exists(caminho))
+            {
+                string[] linhas = System.IO.File.ReadAllLines(@caminho);
+
+                foreach (string linha in linhas)
+                {
+                    // Rodar método de verificação de sintaxe aqui
+                }
+            }
+            else
+            {
+                Console.WriteLine("Arquivo não existe. Saindo...");
+            }
+
         }
     }
 }
