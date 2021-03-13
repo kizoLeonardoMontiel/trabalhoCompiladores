@@ -11,3 +11,5 @@ C:\Users\Leo\source\repos\TrabalhoCompiladores\TrabalhoCompiladores\obj\Debug\ne
 C:\Users\Leo\source\repos\TrabalhoCompiladores\TrabalhoCompiladores\obj\Debug\netcoreapp3.1\TrabalhoCompiladores.dll
 C:\Users\Leo\source\repos\TrabalhoCompiladores\TrabalhoCompiladores\obj\Debug\netcoreapp3.1\TrabalhoCompiladores.pdb
 C:\Users\Leo\source\repos\TrabalhoCompiladores\TrabalhoCompiladores\obj\Debug\netcoreapp3.1\TrabalhoCompiladores.genruntimeconfig.cache
+C:\Users\edu_k\Source\Repos\trabalhoCompiladores\obj\Debug\netcoreapp3.1\TrabalhoCompiladores.dll
+C:\Users\edu_k\Source\Repos\trabalhoCompiladores\obj\Debug\netcoreapp3.1\TrabalhoCompiladores.pdb
