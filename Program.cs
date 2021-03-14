@@ -12,9 +12,10 @@ namespace TrabalhoCompiladores
         static void Main(string[] args)
         {
             int numeroLinha = 0;
-            int countSimbolos = 1;
+            int countSimbolos = 0;
             List<String> tabelaDeToken = new List<String>();
             List<String> tabelaDeSimbolos = new List<String>();
+            List<String> tabelaDeSimbolosBruto = new List<String>();
             List<String> erros = new List<String>();
             Console.WriteLine("Digite o caminho do arquivo");
             string caminho = Console.ReadLine();
@@ -30,31 +31,60 @@ namespace TrabalhoCompiladores
                     {
                         tabelaDeToken.Add(new String("[" + numeroLinha + "] " + linha.ToUpper()));
                     }
+
                     else if (VerificaInteiro(linha))
                     {
-                        tabelaDeSimbolos.Add(new String(countSimbolos + " - " + linha));
-                        countSimbolos++;
-                        tabelaDeToken.Add(new String("[" + numeroLinha + "] " + "NÚMERO INTEIRO " + countSimbolos));
+                        if (tabelaDeSimbolosBruto.Contains(linha))
+                        {
+                            
+                            tabelaDeToken.Add(new String("[" + numeroLinha + "] " + "NÚMERO INTEIRO " + (tabelaDeSimbolosBruto.IndexOf(linha)+1)));
+                        }
+                        else
+                        {
+                            countSimbolos++;
+                            tabelaDeSimbolosBruto.Add(new String(linha));
+                            tabelaDeSimbolos.Add(new String(countSimbolos + " - " + linha));
+                            tabelaDeToken.Add(new String("[" + numeroLinha + "] " + "NÚMERO INTEIRO " + countSimbolos));
+                        }
+                        
                     }
                     else if (VerificaDecimal(linha))
                     {
-                        tabelaDeSimbolos.Add(new String(countSimbolos + " - " + linha));
-                        countSimbolos++;
-                        tabelaDeToken.Add(new String("[" + numeroLinha + "] " + "NÚMERO REAL " + countSimbolos));
+                        if (tabelaDeSimbolosBruto.Contains(linha))
+                        {
+                            
+                            tabelaDeToken.Add(new String("[" + numeroLinha + "] " + "NÚMERO REAL " + (tabelaDeSimbolosBruto.IndexOf(linha) + 1)));
+                        }
+                        else
+                        {
+                            countSimbolos++;
+                            tabelaDeSimbolosBruto.Add(new String(linha));
+                            tabelaDeSimbolos.Add(new String(countSimbolos + " - " + linha));
+                            tabelaDeToken.Add(new String("[" + numeroLinha + "] " + "NÚMERO REAL " + countSimbolos));
+                        }
+
                     }
                     else if (VerificaIdentificador(linha))
                     {
-                        tabelaDeSimbolos.Add(new String(countSimbolos + " - " + linha));
-                        countSimbolos++;
-                        tabelaDeToken.Add(new String("[" + numeroLinha + "] " + "IDENTIFICADOR " + countSimbolos));
+                        if (tabelaDeSimbolosBruto.Contains(linha))
+                        {
+                            tabelaDeToken.Add(new String("[" + numeroLinha + "] " + "IDENTIFICADOR " + (tabelaDeSimbolosBruto.IndexOf(linha) + 1)));
+                        }
+                        else
+                        {
+                            countSimbolos++;
+                            tabelaDeSimbolos.Add(new String(countSimbolos + " - " + linha));
+                            tabelaDeSimbolosBruto.Add(new String(linha));
+                            tabelaDeToken.Add(new String("[" + numeroLinha + "] " + "IDENTIFICADOR " + countSimbolos));
+                        }
                     }
                     else if (VerificaComentario(linha))
                     {
-                        tabelaDeToken.Add(new string("[" + numeroLinha + "] " + "COMENTARIO"));
+                        tabelaDeToken.Add(new string("[" + numeroLinha + "] " + "COMENTÁRIO"));
                     }
                     else
                     {
-                        erros.Add(new string(numeroLinha.ToString() + " " + linha));
+                        erros.Add(new string(numeroLinha.ToString() + " ( " + linha + " )"));
                     }
                     
                 }
@@ -64,7 +94,6 @@ namespace TrabalhoCompiladores
             {
                 Console.WriteLine("Arquivo não existe. Saindo...");
             }
-
         }
 
         static void PrintTabelas(List<String> tabelaDeToken, List<String> tabelaDeSimbolos, List<String> erros)
@@ -140,9 +169,9 @@ namespace TrabalhoCompiladores
             string[] decimais = linha.Split('.');
             if (decimais.Length == 2)
             {
-                if (Regex.IsMatch(decimais[0], @"^[0-9]+$") && linha.Length <= 2)
+                if (Regex.IsMatch(decimais[0], @"^[0-9]+$") && decimais[0].Length <= 2)
                 {
-                    if (Regex.IsMatch(decimais[1], @"^[0-9]+$") && linha.Length <= 2)
+                    if (Regex.IsMatch(decimais[1], @"^[0-9]+$") && decimais[1].Length <= 2)
                     {
                         return true;
                     }
