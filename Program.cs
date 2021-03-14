@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
 
+
 namespace TrabalhoCompiladores
 {
     class Program
@@ -84,7 +85,7 @@ namespace TrabalhoCompiladores
                     }
                     else
                     {
-                        erros.Add(new string(numeroLinha.ToString() + " ( " + linha + " )"));
+                        erros.Add(new string(numeroLinha.ToString() + " (" + linha + ")"));
                     }
                     
                 }
@@ -118,11 +119,11 @@ namespace TrabalhoCompiladores
 
         static bool VerificaIdentificador(String linha)
         {
-            if (Regex.IsMatch(linha[0].ToString(), @"^[a-zA-Z]+$"))
+            if (Regex.IsMatch(linha[0].ToString(), @"[a-zA-Z]$"))
             {
                 foreach (char c in linha)
                 {
-                    if (!Regex.IsMatch(c.ToString(), @"^[a-zA-Z0-9]+$"))
+                    if (!Regex.IsMatch(c.ToString(), @"[a-zA-Z0-9]$"))
                     {
                         return false;
                     }
@@ -154,7 +155,7 @@ namespace TrabalhoCompiladores
         }
         static Boolean VerificaInteiro(String linha)
         {
-            if(Regex.IsMatch(linha, @"^[0-9]+$") && linha.Length <= 2)
+            if(Regex.IsMatch(linha, @"[0-9]$") && linha.Length <= 2)
             {
                 return true;
             }
@@ -169,9 +170,9 @@ namespace TrabalhoCompiladores
             string[] decimais = linha.Split('.');
             if (decimais.Length == 2)
             {
-                if (Regex.IsMatch(decimais[0], @"^[0-9]+$") && decimais[0].Length <= 2)
+                if (Regex.IsMatch(decimais[0], @"[0-9]$") && decimais[0].Length <= 2)
                 {
-                    if (Regex.IsMatch(decimais[1], @"^[0-9]+$") && decimais[1].Length <= 2)
+                    if (Regex.IsMatch(decimais[1], @"[0-9]$") && decimais[1].Length <= 2)
                     {
                         return true;
                     }
