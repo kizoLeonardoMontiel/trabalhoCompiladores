@@ -8,8 +8,6 @@ namespace TrabalhoCompiladores
 {
     class Program
     {
-
-
         static void Main(string[] args)
         {
             int numeroLinha = 0;
@@ -29,7 +27,7 @@ namespace TrabalhoCompiladores
                     numeroLinha++;
                     if (VerificaPalavraReservada(linha)) //Verifica se a linha é uma palavra reservada
                     {
-                        tabelaDeToken.Add(new String("[" + numeroLinha + "] " + linha.ToUpper()));
+                        tabelaDeToken.Add(new String("[" + numeroLinha + "] " + linha.ToUpper()) + " - PALAVRA RESERVADA");
                     }
                     else if (VerificaInteiro(linha)) //Verifica se a linha é um inteiro
                     {
